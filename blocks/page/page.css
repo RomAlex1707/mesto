@@ -1,0 +1,10 @@
+.page {
+  background-color: #000;
+  color: white;
+  font-family: 'Inter';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  margin: 0 auto;
+  max-width: 880px;
+}

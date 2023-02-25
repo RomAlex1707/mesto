@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>MESTO</title>
+</head>
+
+<body class="page">
+  <header class="header">
+    <img src="./images/logo.svg" alt="Mesto logo" class="header__logo">
+  </header>
+  <main class="main">
+    <section class="profile">
+      <div class="profile__avatar-edit">
+        <img class="profile__avatar-pic" title="Аватар профиля" src="./images/jan.jpg" alt="Аватар">
+      </div>
+      <div class="profile__info">
+        <div class="profile__name-container">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button type="button" title="Редактировать профиль" class="profile__edit-button"></button>
+        </div>
+        <p class="profile__description">исследователь океана</p>
+      </div>
+      <button type="button" title="Добавить новую фотографию" class="profile__add-button"></button>
+    </section>
+    <section class="elements">
+      <ul class="elements__list content">
+        <li class="elements__item card">
+          <img src="./images/amur.jpg" class="card__image" alt="река Амур">
+          <div class="card__items">
+            <h2 class="card__title">река Амур</h2>
+            <div class="card__like">
+              <button type="button" class="card__like-button card__like-button_active"></button>
+            </div>
+          </div>
+        </li>
+        <li class="elements__item card">
+          <img src="./images/baykal.jpg" class="card__image" alt="Байкал">
+          <div class="card__items">
+            <h2 class="card__title">Байкал</h2>
+            <div class="card__like">
+              <button type="button" class="card__like-button card__like-button_active"></button>
+            </div>
+          </div>
+        </li>
+        <li class="elements__item card">
+          <img src="./images/beluha.jpg" class="card__image" alt="гора Белуха">
+          <div class="card__items">
+            <h2 class="card__title">гора Белуха</h2>
+            <div class="card__like">
+              <button type="button" class="card__like-button card__like-button_active"></button>
+            </div>
+          </div>
+        </li>
+        <li class="elements__item card">
+          <img src="./images/dombai.jpg" class="card__image" alt="Домбай">
+          <div class="card__items">
+            <h2 class="card__title">Домбай</h2>
+            <div class="card__like">
+              <button type="button" class="card__like-button card__like-button_active"></button>
+            </div>
+          </div>
+        </li>
+        <li class="elements__item card">
+          <img src="./images/elbrus.jpg" class="card__image" alt="Эльбрус">
+          <div class="card__items">
+            <h2 class="card__title">Эльбрус</h2>
+            <div class="card__like">
+              <button type="button" class="card__like-button card__like-button_active"></button>
+            </div>
+          </div>
+        </li>
+        <li class="elements__item card">
+          <img src="./images/lena.jpg" class="card__image" alt="река Лена">
+          <div class="card__items">
+            <h2 class="card__title">река Лена</h2>
+            <div class="card__like">
+              <button type="button" class="card__like-button card__like-button_active"></button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">© 2023 Mesto Russia</p>
+  </footer>
+  <div class="popup popup_opened">
+    <div class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form">
+        <input class="popup__input" type="text" name="name" id="profile-name-input" placeholder="">
+        <input class="popup__input" type="text" name="profesion" id="profile-job-input" placeholder="">
+        <button class="popup__button-save">Сохранить</button>
+      </form>
+      <button class="popup__button-close" type="button" aria-label="Закрыть окно"></button>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
