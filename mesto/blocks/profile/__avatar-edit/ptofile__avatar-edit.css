@@ -1,0 +1,13 @@
+.profile__avatar-edit {
+    width: 150px;
+    height: 127.5px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+@media screen and (max-width: 810px) {
+    .profile__avatar-edit {
+        justify-content: center;
+    }
+}
