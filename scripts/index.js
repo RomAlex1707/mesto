@@ -1,4 +1,3 @@
-
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
 
@@ -45,7 +44,7 @@ initialCards.forEach((item) => {
 });
 
 // добавление новой карточки
-const addCardButton = document.querySelector('.profile__add-button');
+const buttonOpenPopupCard = document.querySelector('.profile__add-button');
 const popupCards = document.querySelector('.popup_cards');
 const formAddCard = popupCards.querySelector('.popup__form-cards');
 const cardNameInput = document.querySelector('#card-name-input');
@@ -64,7 +63,7 @@ function handleAddCardFormSubmit(evt) {
   formAddCard.reset();
 }
 
-addCardButton.addEventListener('click', () => {
+buttonOpenPopupCard.addEventListener('click', () => {
   openPopup(popupCards);
 });
 
@@ -80,9 +79,10 @@ const enableValidationConfig = {
 };
 
 const forms = document.querySelectorAll('.popup__form');
+let validator;
 
 forms.forEach(form => {
-  const validator = new FormValidator(enableValidationConfig, form);
+  validator = new FormValidator(enableValidationConfig, form);
   validator.enableValidation();
 });
 
@@ -205,7 +205,6 @@ profileEditButton.addEventListener('click', function() {
   openProfilePopup();
 })
 
-const clearErrors = function (formElement) {
-  const errorList = formElement.querySelectorAll(".popup__error-visible");
-  errorList.forEach((input) => input.classList.remove("popup__error-visible"));
+const clearErrors = () => {
+  validator.hideAllInputErrors();
 };
