@@ -39,8 +39,8 @@
       }
     }
   
-    _hasInvalidInput(inputs) {
-      return inputs.some(input => !input.validity.valid);
+    _hasInvalidInput() {
+      return this._formInputs.some(input => !input.validity.valid);
     }
   
     _toggleButtonState() {
@@ -51,15 +51,15 @@
       }
     }
     
-    disableButton = (button) => {
-        button.classList.add(this._inactiveButtonClass);
-        button.setAttribute('disabled', true);
+    disableButton = () => {
+      this._formButton.classList.add(this._inactiveButtonClass);
+      this._formButton.setAttribute('disabled', true);
       }
       
 
-    _enableButton(button) {
-      button.classList.remove(this._inactiveButtonClass);
-      button.removeAttribute('disabled');
+    _enableButton() {
+      this._formButton.classList.remove(this._inactiveButtonClass);
+      this._formButton.removeAttribute('disabled');
     }
 
     _setEventListeners() {

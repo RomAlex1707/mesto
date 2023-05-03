@@ -79,10 +79,11 @@ const enableValidationConfig = {
 };
 
 const forms = document.querySelectorAll('.popup__form');
-let validator;
+const formValidators = {};
 
 forms.forEach(form => {
-  validator = new FormValidator(enableValidationConfig, form);
+  const validator = new FormValidator(enableValidationConfig, form);
+  formValidators[form.getAttribute('name')] = validator;
   validator.enableValidation();
 });
 
@@ -103,7 +104,6 @@ function handleFormProfileEditSubmit (evt) {
 }
 
 formElementProfileEdit.addEventListener('submit', handleFormProfileEditSubmit);
-
 
 
 //открытие и закрытие попапа для карточки и попапа самой картинки
@@ -155,7 +155,6 @@ export const openPopup = function (popup) {
   document.addEventListener('keydown', closePopupByClickOnEsc);
   }
 
-
 // открытие
 
 profileAddButton.addEventListener('click', function() {
@@ -190,7 +189,7 @@ popupButtonCloseProfile.addEventListener('click', function() {
 
 const openCardPopup = function() {
   formElementAdd.reset();
-  clearErrors(popupCards);
+  clearErrors(formValidators.formAdd);
   openPopup(popupCards);
 }
 profileAddButton.addEventListener('click', function() {
@@ -198,13 +197,13 @@ profileAddButton.addEventListener('click', function() {
 })
 
 const openProfilePopup = function() {
-  clearErrors(popupProfileEdit);
+  clearErrors(formValidators.form);
   openPopup(popupProfileEdit);
 }
 profileEditButton.addEventListener('click', function() {
   openProfilePopup();
 })
 
-const clearErrors = () => {
+const clearErrors = (validator) => {
   validator.hideAllInputErrors();
 };
