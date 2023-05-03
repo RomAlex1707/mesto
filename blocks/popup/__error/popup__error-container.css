@@ -1,3 +1,4 @@
 .popup__error-container {
+    display: block;
     min-height: 20px;
 }
