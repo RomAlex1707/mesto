@@ -1,0 +1,5 @@
+.popup__error-container {
+    display: block;
+    height: 40px;
+    box-sizing: border-box;
+}
