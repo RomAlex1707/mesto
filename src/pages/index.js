@@ -22,39 +22,37 @@ import FormValidator from "../components/FormValidator.js";
 //создаем экземпляр класса попапа картинки
 
 const popupWithImage = new PopupWithImage('.popup_open-image');
+popupWithImage.setEventListeners();
 
 //создаем экземпляр класса Section, Card
 
 const cardGallery = new Section({
-    items: initialCards,
+    items: initialCards, 
     renderer: (item) => {
-      cardGallery.addItem(
-        new Card(item, ".card__template", () => {
-          popupWithImage.open(item.name, item.link);
-          popupWithImage.setEventListeners();
-        }).generateCard()
-      );
-    },
+    addPicture(item);
   },
-  '.elements__list'
-);
+}, '.elements__list');
+
 cardGallery.renderItems();
 
 //вешаем листенер на кнопку открытия попапа карточек
 buttonOpenPopupCard.addEventListener('click', openAddCardPopup);
 
 
-
 //создаем экземпляр класса валидации для попапа карточек
 const validationFormAddCard = new FormValidator(enableValidationConfig, formAddCard);
 validationFormAddCard.enableValidation();
 
+
+function createCardInstance(item) {
+  return new Card(item, ".card__template", () => {
+    popupWithImage.open(item.name, item.link);
+  });
+}
+
 //функция загрузки картинки
 function addPicture(item) {
-  const newCard = new Card(item, ".card__template", () => {
-    popupWithImage.open(item.name, item.link);
-    popupWithImage.setEventListeners();
-  }).generateCard();
+  const newCard = createCardInstance(item).generateCard();
   cardGallery.addItem(newCard);
 }
 
