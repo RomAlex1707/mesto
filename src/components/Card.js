@@ -54,11 +54,4 @@ export default class Card {
       this._element.remove();
       this._element = null;
     }
-  
-    _handleCardClick() {
-      popupImage.src = this._link;
-      popupImage.alt = this._name;
-      popupImageCaption.textContent = this._name;
-      openPopup(popupOpenImage);
-    }
 }
