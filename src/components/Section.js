@@ -5,13 +5,18 @@ export default class Section {
       this._renderer = renderer;
       this._container = document.querySelector(containerSelector);
     }
+
+    setItems(newItems) {
+      this._initialArray = newItems;
+    }
+    
   // Рендер карточек
     renderItems() {
       this._initialArray.forEach((item) => this._renderer(item));
     }
   // Добавление карточки
     addItem(element) {
-      this._container.prepend(element);
+      this._container.append(element);
     }
   }
 

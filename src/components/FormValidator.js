@@ -7,10 +7,9 @@
       this._inactiveButtonClass = config.inactiveButtonClass;
       this._inputErrorClass = config.inputErrorClass;
       this._errorClass = config.errorClass;
+
       this._formInputs = Array.from(this._form.querySelectorAll(this._inputSelector));
       this._formButton = this._form.querySelector(this._submitButtonSelector);
-
-      
     }
   
     _showInputError(input) {
