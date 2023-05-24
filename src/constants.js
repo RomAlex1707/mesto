@@ -25,6 +25,12 @@ export const initialCards = [
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
   ];
+
+
+  const page = document.querySelector(".page");
+  export const loaderImage = new URL('../src/images/loader.gif', import.meta.url);
+
+
   export const enableValidationConfig = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
@@ -33,6 +39,7 @@ export const initialCards = [
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__error-visible'
   };
+  
   export const buttonOpenPopupCard = document.querySelector('.profile__add-button');
   export const profileEditButton = document.querySelector('.profile__edit-button');
   export const popupProfileEdit = document.querySelector('.popup_profile-edit');
@@ -41,4 +48,6 @@ export const initialCards = [
   export const profileAddButton = document.querySelector('.profile__add-button');
   export const profileNameInput = document.querySelector('#profile-name-input');
   export const profileJobInput = document.querySelector('#profile-job-input');
-  
+  export const avatar = page.querySelector('.profile__avatar');
+  export const formEditAvatar = page.querySelector('#formEditAvatar');
+  export const gallery = document.querySelector(".elements__list");
