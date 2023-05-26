@@ -2,7 +2,6 @@ export default class Api {
     constructor(apiPath, token) {
       this._apiPath = apiPath;
       this._token = token;
-      this.userId = null;
     }
   
     _getResponseData(res) {
@@ -11,7 +10,7 @@ export default class Api {
       }
       return res.json();
     }
-  
+
     getUserInfo() {
       return fetch(`${this._apiPath}/users/me`, {
         headers: {
@@ -19,12 +18,8 @@ export default class Api {
         },
       })
       .then((res) => this._getResponseData(res))
-      .then((data) => {
-        this.userId = data._id;
-        return data;
-      });
-    }
-  
+    } 
+
     getCards() {
       return fetch(`${this._apiPath}/cards`, {
         headers: {
@@ -47,7 +42,7 @@ export default class Api {
       }).then((res) => this._getResponseData(res));
     }
   
-    editAvatar(data) {
+    editAvatar(userData) {
       return fetch(`${this._apiPath}/users/me/avatar`, {
         method: "PATCH",
         headers: {
@@ -55,7 +50,7 @@ export default class Api {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          avatar: data.link,
+          avatar: userData.link,
         }),
       }).then((res) => this._getResponseData(res));
     }

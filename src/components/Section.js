@@ -14,10 +14,9 @@ export default class Section {
     renderItems() {
       this._initialArray.forEach((item) => this._renderer(item));
     }
+    
   // Добавление карточки
     addItem(element) {
-      this._container.append(element);
+      this._container.prepend(element);
     }
-  }
-
-  
+  }  
