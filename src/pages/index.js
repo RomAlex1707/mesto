@@ -99,6 +99,9 @@ function uploadPicture(card) {
         addNewCard(card).generateCard(card.likes.length)
       );
     })
+    .then(() => {
+      popupWithFormAddCard.close();
+    })
     .catch((error) => {
       console.log(error);
     })
@@ -141,6 +144,9 @@ function submitEditProfileForm(item) {
     .then(result => {
       userInfo.setUserInfo({ name:result.name, profession:result.about });
     })
+    .then(() => {
+      popupWithFormEditProfile.close();
+    })
     .catch((error) => {
       console.log(error);
     })
@@ -176,6 +182,9 @@ function editAvatar(item) {
     .then(() => {
       loadAvatar();
     })
+    .then(() => {
+      popupWithFormEditAvatar.close();
+    })
     .catch((error) => {
       console.log(error);
     });
@@ -202,6 +211,9 @@ function deleteCard(idCard, cardInstance) {
     .deleteCard(idCard)
     .then(() => {
       cardInstance.deleteImage();
+    })
+    .then(() => {
+      popupWithFormDeleteCard.close();
     })
     .catch((error) => {
       console.log(error);
